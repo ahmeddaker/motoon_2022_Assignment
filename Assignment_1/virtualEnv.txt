@@ -1,0 +1,17 @@
+to create the environment: 
+    python -m venv <virtual-environment-name>
+
+to activate the virtual environment from Powershell
+    <virtual-environment-name>/Scripts/Activate.ps1
+
+to list all virtual environment dependacies:
+    pip list
+
+to generate text file contains environment dependacies:
+    pip freeze > requirements.txt
+
+to install environment dependacies from text file:
+    pip install -r requirements.txt
+
+to deactivate the virtual environment:
+    deactivate
