@@ -17,12 +17,12 @@ if __name__ == '__main__':
     root.left.left.left = Node(8)
 
 # second way to create a tree
-def create_tree(root, arr):
-    if len(arr) == 0:
-        return
-    root.val = arr[0]
-    root.left = Node(arr[1])
-    root.right = Node(arr[2])
-    create_tree(root.left, arr[3:])
-    create_tree(root.right, arr[3:])
+def create_tree(arr, start, end):
+    if start > end:
+        return None
+    mid = (start + end) // 2
+    root = Node(arr[mid])
+    root.left = create_tree(arr, start, mid-1)
+    root.right = create_tree(arr, mid+1, end)
     return root
+create_tree ([1, 5, 3, 19, 18, 25], 0, 5)
