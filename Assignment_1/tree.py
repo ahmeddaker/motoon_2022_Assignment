@@ -1,3 +1,4 @@
+# first way to create a tree
 class Node:
     def __init__(self, key):
         self.left = None
@@ -14,3 +15,14 @@ if __name__ == '__main__':
     root.right.left = Node(6)
     root.right.right = Node(7)
     root.left.left.left = Node(8)
+
+# second way to create a tree
+def create_tree(root, arr):
+    if len(arr) == 0:
+        return
+    root.val = arr[0]
+    root.left = Node(arr[1])
+    root.right = Node(arr[2])
+    create_tree(root.left, arr[3:])
+    create_tree(root.right, arr[3:])
+    return root
